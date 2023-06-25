@@ -172,7 +172,7 @@ signUpForm.addEventListener("keydown", function (event) {
 });
 
 const loginUser = () => {
-    let users = JSON.parse(localStorage.getItem("users"));
+    let users = JSON.parse(localStorage.getItem("users")) || [];
     let email = document.getElementById("email");
     let password = document.getElementById("password");
     let isEmail = true;
