@@ -154,6 +154,12 @@ const registerUser = () => {
             password: newPassword.value,
         };
         users.push(userObj);
+        newFullName.value = "";
+        newEmail.value = "";
+        newUserName.value = "";
+        newPassword.value = "";
+        newConfirmPassword.value = "";
+        showEmailWindow("registered");
     } else {
         console.log("User Already Exist");
         return;
@@ -202,6 +208,8 @@ const loginUser = () => {
         }
     });
     if (user) {
+        email.value = "";
+        password.value = "";
         localStorage.setItem("loginUser", JSON.stringify(user));
         window.location.replace("./dashboard.html");
     } else {
@@ -220,10 +228,14 @@ signInForm.addEventListener("keydown", (event) => {
 
 const showEmailWindow = (desc) => {
     let emailWindow = document.getElementById("emailWindow");
+    let windowIcon = document.getElementById("windowIcon");
     let emailErrorDesc = document.getElementById("emailErrorDesc");
     let loginErrorDesc = document.getElementById("loginErrorDesc");
     let passError = document.getElementById("passError");
+    let accCreated = document.getElementById("accCreated");
+    windowIcon.src = "./assets/danger.png";
     passError.style.display = "none";
+    accCreated.style.display = "none";
     emailWindow.style.display = "flex";
     gsap.fromTo(
         "#emailWindow",
@@ -246,6 +258,11 @@ const showEmailWindow = (desc) => {
         emailErrorDesc.style.display = "none";
         loginErrorDesc.style.display = "none";
         passError.style.display = "block";
+    } else if (desc === "registered") {
+        windowIcon.src = "./assets/check.svg";
+        accCreated.style.display = "block";
+        emailErrorDesc.style.display = "none";
+        loginErrorDesc.style.display = "none";
     } else {
         emailErrorDesc.style.display = "none";
         loginErrorDesc.style.display = "block";
