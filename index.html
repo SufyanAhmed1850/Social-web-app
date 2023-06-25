@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="emailWindow" class="email-window">
+        <div class="icon">
+            <img src="./assets/danger.png" alt="danger">
+        </div>
+        <p id="emailErrorDesc">There was an error sending the password reset link. Please try again later.</p>
+        <p id="loginErrorDesc">Sorry, the third-party login is currently unavailable. Please try again later or use an
+            alternative login method.</p>
+        <p id="passError">Invalid email or password. Please check your credentials and try again.</p>
+    </div>
+    <main class="container">
+        <section class="sections-wrapper">
+            <section class="left-section">
+                <div class="left-section-top">
+                    <h1><span id="signInText">Sign In</span> to</h1>
+                    <h2>Connect and share with the people.</h2>
+                </div>
+                <div class="left-section-bottom">
+                    <p class="left-section-bottom-p">If you <span id="haveAccountText">don’t</span> have an account
+                        register</p>
+                    <p>You can <span class="purple-text" id="regOrLogText">Register here !</span></p>
+                </div>
+                <div class="bg-img">
+                    <img src="./assets/Saly-14.png" alt="saly exploring the site.">
+                </div>
+            </section>
+            <section class="right-section">
+                <!-- Sign In HTML -->
+                <div class="form" id="signInForm" tabindex="1">
+                    <p class="sign-in-head">Sign in</p>
+                    <div class="email-input">
+                        <input id="email" class="form-input" type="email" placeholder="Email or user name">
+                    </div>
+                    <div class="password-input">
+                        <input id="password" class="form-input" type="password" placeholder="Password">
+                        <img src="./assets/invisible 1.svg" alt="eye">
+                        <p class="forget-pass-text" onclick="showEmailWindow('emailErrorDesc')">Forgor password ?</p>
+                    </div>
+                    <div>
+                        <button id="logInBtn">Login</button>
+                    </div>
+                </div>
+                <!-- Sign Up HTML -->
+                <div class="form d-none" id="signUpForm" style="gap: 18px;" tabindex="1">
+                    <p class="sign-in-head">Sign Up</p>
+                    <div>
+                        <input id="newFullName" class="form-input" type="text" placeholder="Full name">
+                        <p id="newNameSpacesError" class="pass-donot-match v-hidden">Name can't start or end with a
+                            blank space</p>
+                    </div>
+                    <div>
+                        <input id="newEmail" class="form-input" type="email" placeholder="Email address">
+                        <p id="invalidEmailError" class="pass-donot-match v-hidden">Invalid email</p>
+                        <p id="emailExistError" class="pass-donot-match d-none">This email is already taken</p>
+                    </div>
+                    <div>
+                        <input id="newUserName" class="form-input" type="text" placeholder="User name">
+                        <p id="usernameExistError" class="pass-donot-match v-hidden">This username is already taken.</p>
+                    </div>
+                    <div class="password-input">
+                        <input id="newPassword" class="form-input" type="password" placeholder="Password">
+                        <img src="./assets/invisible 1.svg" alt="eye">
+                        <p id="newPassSpacesError" class="pass-donot-match v-hidden">Password can't start or end with a
+                            blank space
+                        </p>
+                    </div>
+                    <div class="password-input">
+                        <input id="newConfirmPassword" class="form-input" type="password"
+                            placeholder="Confrim Password">
+                        <img src="./assets/invisible 1.svg" alt="eye">
+                        <p id="newPassMatchError" class="pass-donot-match v-hidden">Passwords didn't match. Try again.
+                        </p>
+                    </div>
+                    <div>
+                        <button id="registerBtn" class="register-btn">Register</button>
+                    </div>
+                </div>
+                <p class="third-party-text">or continue with</p>
+                <section class="third-party-sign-in">
+                    <div onclick="showEmailWindow()">
+                        <img src="./assets/Facebook.svg" alt="facebook">
+                    </div>
+                    <div onclick="showEmailWindow()">
+                        <img src="./assets/apple.svg" alt="apple">
+                    </div>
+                    <div onclick="showEmailWindow()">
+                        <img src="./assets/google.svg" alt="google">
+                    </div>
+                </section>
+            </section>
+        </section>
+    </main>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
+<script src="app.js"></script>
+
+</html>
