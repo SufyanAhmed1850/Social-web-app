@@ -1,3 +1,8 @@
+let toDashboard = JSON.parse(localStorage.getItem("loginUser"));
+if (toDashboard) {
+    window.location.replace("./dashboard.html");
+}
+
 const toggleForm = () => {
     let signInForm = document.getElementById("signInForm");
     let signUpForm = document.getElementById("signUpForm");
@@ -148,7 +153,7 @@ const registerUser = () => {
         isValidnewPassword
     ) {
         let userObj = {
-            fullName: newUserName.value,
+            fullName: newFullName.value,
             email: newEmail.value,
             userName: newUserName.value,
             password: newPassword.value,
@@ -200,9 +205,8 @@ const loginUser = () => {
     }
     let user = users.find((value) => {
         if (
-            email.value === value.email ||
-            (email.value === value.userName &&
-                password.value === value.password)
+            (email.value === value.email || email.value === value.userName) &&
+            password.value === value.password
         ) {
             return true;
         }

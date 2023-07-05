@@ -216,6 +216,10 @@ img {
 }
 
 @media (width < 785px) {
+    .container {
+        align-items: flex-start;
+    }
+
     .sections-wrapper {
         flex-direction: column;
         justify-content: center;
@@ -251,4 +255,130 @@ img {
     .third-party-sign-in {
         margin-bottom: 42px;
     }
+}
+
+.dashboard {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dashboard-main-section {
+    margin: 48px 0;
+    width: 95%;
+    max-width: 1250px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 72px;
+}
+
+.create-post-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    max-width: 400px;
+    outline: none;
+}
+
+.create-post-section h1 {
+    font-size: 36px;
+}
+
+.create-post-section textarea {
+    resize: none;
+}
+
+.post-btn {
+    padding: 20px 0;
+    font-weight: 500;
+    color: var(--clr-purple-50);
+    font-size: 0.9375rem;
+    width: 100%;
+    border-radius: 8px;
+    background: var(--clr-purple-100);
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.create-post-section *:not(.post-btn):focus {
+    outline: 1px solid var(--clr-purple-75);
+}
+
+.post-section {
+    width: 100%;
+    max-width: 550px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.post {
+    width: 100%;
+    background-color: #22222215;
+    border-radius: 16px;
+    padding: 12px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.post h1 {
+    font-size: 30px;
+    outline: none;
+}
+
+.post p {
+    font-size: 18px;
+    text-align: justify;
+    text-justify: inter-word;
+    outline: none;
+}
+
+.post-btn-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.post-btn-wrapper button {
+    flex: 1;
+    padding: 10px 0;
+    font-weight: 500;
+    color: var(--clr-white-100);
+    font-size: 0.9375rem;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    min-width: 150px;
+}
+
+.edit-btn {
+    background-color: var(--clr-purple-100);
+}
+
+.delete-btn {
+    background-color: #D9183B;
+}
+
+.log-out-btn {
+    padding: 20px 0;
+    font-weight: 500;
+    color: var(--clr-purple-50);
+    background-color: var(--clr-purple-100);
+    font-size: 0.9375rem;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(10%, 33%);
 }

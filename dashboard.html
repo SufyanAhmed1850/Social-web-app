@@ -1,12 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1>Hello World</h1>
+
+<body class="dashboard">
+    <section class="dashboard-main-section">
+        <div class="create-post-section" tabindex="1">
+            <h1>CREATE POST</h1>
+            <input id="newPostTitle" type="text" placeholder="Title" class="form-input">
+            <textarea id="newPostDesc" placeholder="Description..." rows="5" class="form-input"></textarea>
+            <button onclick="createPost()" class="post-btn">POST</button>
+        </div>
+        <div class="post-section">
+            <!-- <div class="post">
+                <h1>First Post</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime facilis quis odio ipsam excepturi
+                    harum
+                    culpa adipisci minima iure modi.</p>
+                <div class="post-btn-wrapper">
+                    <button class="edit-btn">EDIT</button>
+                    <button class="delete-btn">DELETE</button>
+                </div>
+            </div> -->
+        </div>
+    </section>
+    <button class="log-out-btn" onclick="logOut()">LOG OUT</button>
 </body>
 <script src="dashboard.js"></script>
+
 </html>
